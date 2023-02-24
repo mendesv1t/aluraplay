@@ -1,7 +1,7 @@
 .cabecalho__container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     position: fixed;
     top: 0;
 }
@@ -10,10 +10,111 @@
     display: none;
 }
 
-@media (min-width: 834px) {
+.rodape__container {
+    display: flex;
+    /* flex-direction: column;
+    flex-wrap: wrap;
+    essas duas props dão no mesmo que a abaixo */
+    flex-flow: column wrap;
+}
 
+.superior__secao__container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: scroll;
+    gap: 15px;
+}
+
+.menu__container {
+    display: flex;
+    position: fixed;
+    bottom: 0%;
+    height: 74px;
+    width: 100%;
+
+}
+
+.menu__lista {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.menu__lista li {
+    align-self: center;
+}
+
+/* suponha que temos 4 menus lista e só queremos exibir no mobile o primeiro,
+o método nth-child() recebe o index do menu lista que vc deseja modificar no css e atribui
+as modificações a ele, logo no mobile temos que os menus 2, 3 e 4 não aparecem. */
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+    display: none;
+}
+
+.menu__itens {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.superior__secao__container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: scroll;
+    gap: 15px;
+}
+
+@media (min-width: 1440px) {
+    .menu__container {
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex;
+    }
+    .menu__lista {
+        height: auto;
+        padding: 20px 17px 15px;
+        gap: 15px;
+    }
+    .menu__itens {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 834px) {
     .cabecalho__pesquisar__item {
         display: block;
+    }
+
+    .rodape__container {
+        justify-content: space-between;
+    }
+
+    .menu__lista {
+        gap: 5em;
+    }
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
     }
 
 }
