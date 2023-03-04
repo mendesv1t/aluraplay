@@ -27,7 +27,6 @@
 }
 
 .menu__container {
-    display: flex;
     position: fixed;
     bottom: 0%;
     height: 74px;
@@ -68,40 +67,14 @@ as modificações a ele, logo no mobile temos que os menus 2, 3 e 4 não aparece
     gap: 15px;
 }
 
-@media (min-width: 1440px) {
-    .menu__container {
-        width: 239px;
-        overflow: scroll;
-    }
 
-    .menu__lista:nth-child(2),
-    .menu__lista:nth-child(3),
-    .menu__lista:nth-child(4) {
-        display: flex;
-    }
-    .menu__lista {
-        height: auto;
-        padding: 20px 17px 15px;
-        gap: 15px;
-    }
-    .menu__itens {
-        flex-direction: row;
-        gap: 15px;
-        align-items: center;
-    }
-}
-
-@media screen and (min-width: 834px) {
+@media (min-width: 834px) {
     .cabecalho__pesquisar__item {
         display: block;
     }
 
     .rodape__container {
         justify-content: space-between;
-    }
-
-    .menu__lista {
-        gap: 5em;
     }
     .menu__lista {
         flex-direction: column;
